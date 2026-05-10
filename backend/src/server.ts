@@ -4,7 +4,7 @@ import supabasePlugin from './plugins/supabase.js';
 import corsPlugin from './plugins/cors.js';
 import ethereumPlugin from './plugins/ethereum.js';
 import filecoinPlugin from './plugins/filecoin.js';
-import rawBody from '@fastify/raw-body';
+import rawBody from 'fastify-raw-body';
 
 const fastify = Fastify({
   logger: {

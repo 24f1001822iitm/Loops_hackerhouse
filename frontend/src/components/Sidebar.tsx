@@ -1,5 +1,5 @@
-import { NavLink } from 'react-router-dom'
-import { FileText, Phone, BarChart3, Settings, Headphones, Database } from 'lucide-react'
+import { NavLink, Link } from 'react-router-dom'
+import { FileText, Phone, BarChart3, Settings, Headphones, Database, Shield } from 'lucide-react'
 
 const navItems = [
   { to: '/', icon: FileText, label: 'Claims' },
@@ -13,10 +13,15 @@ const navItems = [
 export function Sidebar() {
   return (
     <aside className="w-64 bg-white border-r border-gray-200 flex flex-col">
-      <div className="p-6 border-b border-gray-200">
-        <h1 className="text-xl font-bold text-gray-900">SafeGuard</h1>
-        <p className="text-sm text-gray-500 mt-1">Insurance AI Agent</p>
-      </div>
+      <Link to="/landing">
+        <div className="p-6 border-b border-gray-200 cursor-pointer hover:opacity-80 transition-opacity">
+          <div className="flex items-center gap-2">
+            <Shield className="w-6 h-6 text-blue-600" />
+            <span className="text-xl font-bold text-gray-900">SafeGuard</span>
+          </div>
+          <p className="text-sm text-gray-500 mt-1">Insurance AI Agent</p>
+        </div>
+      </Link>
       <nav className="flex-1 p-4 space-y-1">
         {navItems.map(({ to, icon: Icon, label }) => (
           <NavLink

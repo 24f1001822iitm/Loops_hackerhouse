@@ -7,11 +7,13 @@ import { Analytics } from './pages/Analytics'
 import { AgentConfig } from './pages/AgentConfig'
 import { ClaimDetail } from './pages/ClaimDetail'
 import { Blockchain } from './pages/Blockchain'
+import Landing from './pages/Landing'
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/landing" element={<Landing />} />
         <Route element={<Layout />}>
           <Route path="/" element={<ClaimsList />} />
           <Route path="/calls" element={<CallHistory />} />

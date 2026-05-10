@@ -42,6 +42,12 @@ await fastify.register(import('./routes/webhook-tools.js'), { prefix: '/api' });
 // Health check
 fastify.get('/health', async () => ({ status: 'ok', timestamp: new Date().toISOString() }));
 
+// Build/version check
+fastify.get('/version', async () => ({
+  git_sha: process.env.RAILWAY_GIT_COMMIT_SHA || process.env.GIT_COMMIT || 'unknown',
+  build_time: process.env.RAILWAY_DEPLOYMENT_ID || 'unknown',
+}));
+
 // Start server
 const start = async () => {
   try {

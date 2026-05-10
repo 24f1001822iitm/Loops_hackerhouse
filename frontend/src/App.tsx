@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Layout } from './components/Layout'
 import { ClaimsList } from './pages/ClaimsList'
 import { CallHistory } from './pages/CallHistory'
@@ -15,7 +15,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route element={<Layout />}>
-          <Route index element={<Navigate to="/claims" replace />} />
           <Route path="/claims" element={<ClaimsList />} />
           <Route path="/calls" element={<CallHistory />} />
           <Route path="/live" element={<LiveCallView />} />

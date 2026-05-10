@@ -2,7 +2,7 @@ import { getContract, type Address, type Hash, type PublicClient, type WalletCli
 import ClaimRegistryAbi from '../abis/ClaimRegistry.json';
 
 export async function attestClaim(
-  publicClient: PublicClient<Transport, Chain>,
+  publicClient: PublicClient,
   walletClient: WalletClient<Transport, Chain, Account>,
   claimRegistryAddress: Address,
   account: Address,
